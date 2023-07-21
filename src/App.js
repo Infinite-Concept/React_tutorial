@@ -1,14 +1,27 @@
 import React from "react";
-import Hero1 from "./High_order_component/Hero1";
-import Hero2 from "./High_order_component/Hero2";
+import Person1 from "./component/Render_props/Person1";
+import Person2 from "./component/Render_props/Person2";
+import Renderprops from "./component/Render_props/Renderprops";
+import Hero from "./component/High_order_component/Usememo/Hero";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* High order component in react */}
-        <Hero1 />
-        <Hero2 />
+        {/* <div>
+          High order component in react 
+          <Hero1 />
+          <Hero2 />
+        </div> */}
+
+
+        
+        <Renderprops props={(count, Increase) => <Person1 count={count} Increase={Increase} />} />
+        <Renderprops props={(count, Increase) => <Person2 count={count} Increase={Increase} />} />
+
+        <hr />
+
+        <Hero />
       </header>
     </div>
   );
